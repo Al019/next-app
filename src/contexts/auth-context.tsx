@@ -1,12 +1,12 @@
 "use client";
 
-import { Session } from "@supabase/supabase-js";
+import { Provider, Session } from "@supabase/supabase-js";
 import { createContext, useEffect, useState, useContext } from "react";
 import { supabase } from "../../supabase";
 
 interface AuthContextType {
   session: Session | null;
-  signIn: () => Promise<void>;
+  signIn: (provider: Provider) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
@@ -31,9 +31,9 @@ export const AuthContextProvider = ({ children }: AuthProviderProps) => {
     return () => subscription.unsubscribe();
   }, []);
 
-  const signIn = async () => {
+  const signIn = async (provider: Provider) => {
     await supabase.auth.signInWithOAuth({
-      provider: "google",
+      provider: provider,
     });
   };
 

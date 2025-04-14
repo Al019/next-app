@@ -21,10 +21,16 @@ export default function SignIn() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>
-          <DialogTitle>Sign in with Google</DialogTitle>
+          <DialogTitle>Sign in with</DialogTitle>
         </DialogHeader>
         <DialogClose asChild>
-          <Button onClick={signIn}>Continue with Google</Button>
+          <Button onClick={() => signIn("google")}>Google</Button>
+        </DialogClose>
+        <DialogClose asChild>
+          <Button onClick={() => signIn("github")}>GitHub</Button>
+        </DialogClose>
+        <DialogClose asChild>
+          <Button onClick={() => signIn("facebook")}>Facebook</Button>
         </DialogClose>
       </DialogContent>
     </Dialog>
