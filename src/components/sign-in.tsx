@@ -19,7 +19,7 @@ export default function SignIn() {
       <DialogTrigger asChild>
         <Button>Sign in</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-sm">
+      <DialogContent>
         <DialogHeader>
           <DialogTitle>Sign in with</DialogTitle>
         </DialogHeader>
